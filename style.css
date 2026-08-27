@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #17110d;
+    color: #fff;
+    line-height: 1.6;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(23, 17, 13, 0.95);
+
+    border-bottom: 1px solid #3a2a20;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #d99a5b;
+    margin-left: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #d99a5b;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.label {
+    color: #d99a5b;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    max-width: 800px;
+
+    font-size: clamp(42px, 9vw, 75px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero > p:not(.label) {
+    max-width: 600px;
+
+    color: #c9c1bc;
+
+    margin-bottom: 30px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    background: #d99a5b;
+
+    color: #17110d;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* SECTION */
+
+.section {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 38px;
+
+    margin-bottom: 40px;
+}
+
+.menu-section {
+    max-width: 1180px;
+}
+
+
+/* =====================================================
+   COFFEE SLIDER
+   Gaya diadaptasi dari referensi video "Jacket Masters":
+   panel gelap membulat, gambar produk melayang di tengah,
+   harga & ukuran di kanan, animasi masuk/keluar diagonal,
+   dan warna latar yang berpindah mengikuti produk aktif.
+   ===================================================== */
+
+.coffee-slider {
+    position: relative;
+
+    text-align: left;
+
+    border-radius: 26px;
+    overflow: hidden;
+
+    min-height: 560px;
+
+    padding: 90px 5% 40px;
+
+    background: radial-gradient(
+            120% 140% at 100% 0%,
+            var(--bg2, #241608) 0%,
+            var(--bg1, #5a3a22) 45%,
+            var(--bg2, #241608) 100%
+        );
+
+    transition: background 0.8s ease;
+
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+
+/* TOP TABS (referensi: PUFFER JACKET / ALL PRODUCTS / ...) */
+
+.slider-tabs {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 6px;
+
+    background: rgba(0, 0, 0, 0.32);
+    border-radius: 30px;
+    padding: 6px;
+
+    z-index: 5;
+}
+
+.slider-tabs .tab {
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    padding: 8px 16px;
+    border-radius: 20px;
+
+    color: #e7ddd3;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.slider-tabs .tab.active {
+    background: #fff;
+    color: #17110d;
+    font-weight: bold;
+}
+
+
+/* ARROWS */
+
+.arrow {
+    position: absolute;
+    top: 58px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+
+    font-size: 13px;
+    cursor: pointer;
+
+    z-index: 6;
+
+    transition: 0.25s;
+}
+
+.arrow:hover {
+    background: #d99a5b;
+    color: #17110d;
+    border-color: #d99a5b;
+}
+
+.arrow-prev {
+    left: 5%;
+}
+
+.arrow-next {
+    left: calc(5% + 46px);
+}
+
+
+/* SLIDES WRAP */
+
+.slides-wrap {
+    position: relative;
+
+    min-height: 380px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 0.8fr;
+    align-items: center;
+    gap: 20px;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+
+/* TEXT BLOCK */
+
+.slide-info {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s;
+}
+
+.slide.active .slide-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-label {
+    color: #d99a5b;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.slide-title {
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.slide-desc {
+    max-width: 320px;
+    color: #d8cfc7;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+
+/* PRODUCT IMAGE */
+
+.slide-image {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+}
+
+.slide-image img {
+    max-width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.45));
+
+    opacity: 0;
+    transform: translate(22%, 22%) scale(0.55) rotate(10deg);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.65s cubic-bezier(.2, .8, .3, 1.15);
+}
+
+.slide.active .slide-image img {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+}
+
+/* arah keluar: menuju kiri-atas seperti pada video referensi */
+.slide.leaving .slide-image img {
+    opacity: 0;
+    transform: translate(-22%, -22%) scale(0.55) rotate(-10deg);
+    transition:
+        opacity 0.45s ease,
+        transform 0.5s ease;
+}
+
+.slide.leaving .slide-info {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* arah sebaliknya ketika tombol "prev" ditekan */
+.slide.reverse .slide-image img {
+    transform: translate(-22%, -22%) scale(0.55) rotate(-10deg);
+}
+
+.slide.reverse.leaving .slide-image img {
+    transform: translate(22%, 22%) scale(0.55) rotate(10deg);
+}
+
+
+/* PRICE / SIZE BLOCK */
+
+.slide-price {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+
+    text-align: right;
+}
+
+.slide.active .slide-price {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.price-now {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.price-old {
+    font-size: 15px;
+    color: #b7a99c;
+    text-decoration: line-through;
+    margin-bottom: 18px;
+}
+
+.size-label {
+    font-size: 12px;
+    color: #d8cfc7;
+    margin-bottom: 8px;
+}
+
+.sizes {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.size {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.size:hover {
+    border-color: #d99a5b;
+}
+
+.size.active {
+    background: #fff;
+    color: #17110d;
+    font-weight: bold;
+    border-color: #fff;
+}
+
+
+/* TAGLINE (bawah tengah, seperti "Confidence, wrapped in warmth") */
+
+.slide-tagline {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 13px;
+    color: #e7ddd3;
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.5s ease 0.25s;
+
+    white-space: nowrap;
+}
+
+.slide.active .slide-tagline {
+    opacity: 1;
+}
+
+
+/* NEXT PREVIEW THUMBNAIL (pojok kanan bawah, seperti referensi) */
+
+.next-preview {
+    position: absolute;
+    right: 4%;
+    bottom: 24px;
+
+    width: 84px;
+    height: 84px;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+    z-index: 6;
+
+    transition: 0.25s;
+}
+
+.next-preview:hover {
+    transform: translateY(-4px);
+    border-color: #d99a5b;
+}
+
+.next-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+}
+
+
+/* DOTS */
+
+.dots {
+    position: absolute;
+    bottom: 24px;
+    left: 4%;
+
+    display: flex;
+    gap: 6px;
+
+    z-index: 6;
+}
+
+.dots .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.dots .dot.active {
+    width: 20px;
+    border-radius: 5px;
+    background: #d99a5b;
+}
+
+
+/* ABOUT */
+
+.about {
+    max-width: 700px;
+}
+
+.about > p:last-child,
+.contact > p:last-child {
+    color: #aaa09a;
+}
+
+
+/* CONTACT */
+
+.contact {
+    min-height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.contact p {
+    margin-bottom: 25px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #766b64;
+
+    border-top: 1px solid #3a2a20;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        text-align: center;
+        gap: 6px;
+        padding-top: 10px;
+    }
+
+    .slide-info {
+        order: 1;
+    }
+
+    .slide-image {
+        order: 0;
+        height: 220px;
+    }
+
+    .slide-image img {
+        max-height: 200px;
+    }
+
+    .slide-price {
+        order: 2;
+        text-align: center;
+    }
+
+    .sizes {
+        justify-content: center;
+    }
+
+    .slide-desc {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .coffee-slider {
+        min-height: 640px;
+        padding-top: 130px;
+    }
+
+    .slides-wrap {
+        min-height: 480px;
+    }
+
+    .next-preview {
+        display: none;
+    }
+
+    .slide-tagline {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .slider-tabs .tab {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+}

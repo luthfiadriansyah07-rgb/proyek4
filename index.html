@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Luthfi Coffee</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            LUTHFI<span>COFFEE</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#about">Tentang</a>
+
+            <a href="#contact">Kontak</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <p class="label">
+            PREMIUM COFFEE
+        </p>
+
+        <h1>
+            Kopi terbaik untuk
+            menemani harimu.
+        </h1>
+
+        <p>
+            Nikmati kopi pilihan dengan
+            cita rasa yang dibuat khusus
+            untuk menemani setiap momen.
+        </p>
+
+        <a href="#menu" class="btn">
+            Lihat Menu
+        </a>
+
+    </section>
+
+
+    <!-- MENU / COFFEE SLIDER -->
+
+    <section id="menu" class="section menu-section">
+
+        <p class="label">
+            MENU KAMI
+        </p>
+
+        <h2>
+            Pilihan Favorit
+        </h2>
+
+        <!-- SLIDER -->
+        <div class="coffee-slider" id="coffeeSlider">
+
+            <div class="slider-tabs">
+                <span class="tab active">SEMUA MENU</span>
+                <span class="tab">KOPI SUSU</span>
+                <span class="tab">KOPI HITAM</span>
+                <span class="tab">DINGIN</span>
+            </div>
+
+            <button class="arrow arrow-prev" id="prevBtn" aria-label="Sebelumnya">&#10094;</button>
+            <button class="arrow arrow-next" id="nextBtn" aria-label="Berikutnya">&#10095;</button>
+
+            <div class="slides-wrap" id="slidesWrap">
+
+                <!-- 1. ESPRESSO -->
+                <div class="slide active"
+                     data-bg1="#3c2415" data-bg2="#150c07">
+
+                    <div class="slide-info">
+                        <p class="slide-label">SIGNATURE COFFEE</p>
+                        <h3 class="slide-title">Espresso</h3>
+                        <p class="slide-desc">
+                            Espresso murni dengan crema tebal,
+                            pekat dan menggugah selera di setiap tegukan.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Espresso (M)"
+                                data-price="15000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/espresso.png" alt="Espresso">
+                    </div>
+
+                    <div class="slide-price" data-base-price="15000">
+                        <div class="price-now">Rp15.000</div>
+                        <div class="price-old">Rp20.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Sederhana, kuat, dan penuh karakter.</p>
+                </div>
+
+
+                <!-- 2. AMERICANO -->
+                <div class="slide"
+                     data-bg1="#2b1c11" data-bg2="#120b06">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI HITAM</p>
+                        <h3 class="slide-title">Americano</h3>
+                        <p class="slide-desc">
+                            Perpaduan espresso dan air panas,
+                            ringan namun tetap kaya rasa.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Americano (M)"
+                                data-price="17000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/americano.png" alt="Americano">
+                    </div>
+
+                    <div class="slide-price" data-base-price="17000">
+                        <div class="price-now">Rp17.000</div>
+                        <div class="price-old">Rp22.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Pekat, jujur, tanpa basa-basi.</p>
+                </div>
+
+
+                <!-- 3. CAPPUCCINO -->
+                <div class="slide"
+                     data-bg1="#5a3a22" data-bg2="#241608">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI SUSU</p>
+                        <h3 class="slide-title">Cappuccino</h3>
+                        <p class="slide-desc">
+                            Espresso, susu, dan foam lembut
+                            dengan taburan bubuk cokelat.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Cappuccino (M)"
+                                data-price="22000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/cappuccino.png" alt="Cappuccino">
+                    </div>
+
+                    <div class="slide-price" data-base-price="22000">
+                        <div class="price-now">Rp22.000</div>
+                        <div class="price-old">Rp28.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Lembut di lidah, hangat di hati.</p>
+                </div>
+
+
+                <!-- 4. LATTE -->
+                <div class="slide"
+                     data-bg1="#6b4a2c" data-bg2="#2a1c10">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI SUSU</p>
+                        <h3 class="slide-title">Latte</h3>
+                        <p class="slide-desc">
+                            Espresso dengan susu creamy berlapis,
+                            lembut di setiap tegukan.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Latte (M)"
+                                data-price="23000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/latte.png" alt="Latte">
+                    </div>
+
+                    <div class="slide-price" data-base-price="23000">
+                        <div class="price-now">Rp23.000</div>
+                        <div class="price-old">Rp29.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Creamy, hangat, selalu menenangkan.</p>
+                </div>
+
+
+                <!-- 5. MACCHIATO -->
+                <div class="slide"
+                     data-bg1="#40281a" data-bg2="#180f08">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI HITAM</p>
+                        <h3 class="slide-title">Macchiato</h3>
+                        <p class="slide-desc">
+                            Espresso dengan sentuhan foam susu
+                            di atasnya, kuat namun elegan.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Macchiato (M)"
+                                data-price="20000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/macchiato.png" alt="Macchiato">
+                    </div>
+
+                    <div class="slide-price" data-base-price="20000">
+                        <div class="price-now">Rp20.000</div>
+                        <div class="price-old">Rp26.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Kecil ukurannya, besar rasanya.</p>
+                </div>
+
+
+                <!-- 6. MOCHA -->
+                <div class="slide"
+                     data-bg1="#4a2d1c" data-bg2="#1e130b">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI SUSU</p>
+                        <h3 class="slide-title">Mocha</h3>
+                        <p class="slide-desc">
+                            Perpaduan espresso, cokelat, dan susu
+                            dengan whipped cream lumer.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Mocha (M)"
+                                data-price="25000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/mocha.png" alt="Mocha">
+                    </div>
+
+                    <div class="slide-price" data-base-price="25000">
+                        <div class="price-now">Rp25.000</div>
+                        <div class="price-old">Rp32.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Manis cokelat, pahit kopi, seimbang.</p>
+                </div>
+
+
+                <!-- 7. FLAT WHITE -->
+                <div class="slide"
+                     data-bg1="#55381f" data-bg2="#22160c">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI SUSU</p>
+                        <h3 class="slide-title">Flat White</h3>
+                        <p class="slide-desc">
+                            Espresso ganda dengan microfoam susu
+                            yang halus dan seimbang.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Flat White (M)"
+                                data-price="24000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/flatwhite.png" alt="Flat White">
+                    </div>
+
+                    <div class="slide-price" data-base-price="24000">
+                        <div class="price-now">Rp24.000</div>
+                        <div class="price-old">Rp30.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Sempurna untuk penikmat rasa halus.</p>
+                </div>
+
+
+                <!-- 8. CORTADO -->
+                <div class="slide"
+                     data-bg1="#3e2716" data-bg2="#170f09">
+
+                    <div class="slide-info">
+                        <p class="slide-label">KOPI HITAM</p>
+                        <h3 class="slide-title">Cortado</h3>
+                        <p class="slide-desc">
+                            Espresso dan susu hangat dalam porsi
+                            seimbang, ringkas dan pekat.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Cortado (M)"
+                                data-price="21000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/cortado.png" alt="Cortado">
+                    </div>
+
+                    <div class="slide-price" data-base-price="21000">
+                        <div class="price-now">Rp21.000</div>
+                        <div class="price-old">Rp27.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Ringkas namanya, penuh rasanya.</p>
+                </div>
+
+
+                <!-- 9. IRISH COFFEE -->
+                <div class="slide"
+                     data-bg1="#4c2c14" data-bg2="#1c1108">
+
+                    <div class="slide-info">
+                        <p class="slide-label">SPESIAL</p>
+                        <h3 class="slide-title">Irish Coffee</h3>
+                        <p class="slide-desc">
+                            Kopi hangat dengan sentuhan krim lembut,
+                            nikmat dan menghangatkan.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Irish Coffee (M)"
+                                data-price="28000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/irishcoffee.png" alt="Irish Coffee">
+                    </div>
+
+                    <div class="slide-price" data-base-price="28000">
+                        <div class="price-now">Rp28.000</div>
+                        <div class="price-old">Rp35.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Hangat dari luar, nikmat dari dalam.</p>
+                </div>
+
+
+                <!-- 10. AFFOGATO -->
+                <div class="slide"
+                     data-bg1="#634527" data-bg2="#281a0d">
+
+                    <div class="slide-info">
+                        <p class="slide-label">SPESIAL</p>
+                        <h3 class="slide-title">Affogato</h3>
+                        <p class="slide-desc">
+                            Es krim vanila disiram shot espresso
+                            panas, manis dan pekat berpadu.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Affogato (M)"
+                                data-price="26000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/affogato.png" alt="Affogato">
+                    </div>
+
+                    <div class="slide-price" data-base-price="26000">
+                        <div class="price-now">Rp26.000</div>
+                        <div class="price-old">Rp33.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Dessert dan kopi jadi satu sajian.</p>
+                </div>
+
+
+                <!-- 11. ICED COFFEE -->
+                <div class="slide"
+                     data-bg1="#33291c" data-bg2="#14100a">
+
+                    <div class="slide-info">
+                        <p class="slide-label">DINGIN</p>
+                        <h3 class="slide-title">Iced Coffee</h3>
+                        <p class="slide-desc">
+                            Kopi hitam dingin dengan es batu,
+                            segar untuk menemani harimu.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Iced Coffee (M)"
+                                data-price="19000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/icedcoffee.png" alt="Iced Coffee">
+                    </div>
+
+                    <div class="slide-price" data-base-price="19000">
+                        <div class="price-now">Rp19.000</div>
+                        <div class="price-old">Rp25.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Segar, dingin, dan penuh energi.</p>
+                </div>
+
+
+                <!-- 12. FRAPPE -->
+                <div class="slide"
+                     data-bg1="#6e5230" data-bg2="#2b2013">
+
+                    <div class="slide-info">
+                        <p class="slide-label">DINGIN</p>
+                        <h3 class="slide-title">Frappe</h3>
+                        <p class="slide-desc">
+                            Kopi blender dingin dengan cream
+                            di atasnya, creamy dan menyegarkan.
+                        </p>
+                        <button class="btn order-btn"
+                                data-menu="Frappe (M)"
+                                data-price="27000">
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="slide-image">
+                        <img src="images/frappe.png" alt="Frappe">
+                    </div>
+
+                    <div class="slide-price" data-base-price="27000">
+                        <div class="price-now">Rp27.000</div>
+                        <div class="price-old">Rp34.000</div>
+
+                        <p class="size-label">Pilih Ukuran:</p>
+                        <div class="sizes">
+                            <span class="size" data-diff="-3000">S</span>
+                            <span class="size active" data-diff="0">M</span>
+                            <span class="size" data-diff="4000">L</span>
+                        </div>
+                    </div>
+
+                    <p class="slide-tagline">Dingin, creamy, favorit segala musim.</p>
+                </div>
+
+            </div>
+            <!-- /slides-wrap -->
+
+            <button class="next-preview" id="nextPreview" aria-label="Pratinjau kopi berikutnya">
+                <img id="nextPreviewImg" src="images/americano.png" alt="Kopi berikutnya">
+            </button>
+
+            <div class="dots" id="dots"></div>
+
+        </div>
+        <!-- /coffee-slider -->
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="section about">
+
+        <p class="label">
+            TENTANG KAMI
+        </p>
+
+        <h2>
+            Dibuat dengan rasa.
+        </h2>
+
+        <p>
+            Luthfi Coffee menghadirkan kopi
+            berkualitas dengan bahan pilihan
+            dan rasa yang konsisten.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="section contact">
+
+        <p class="label">
+            KONTAK
+        </p>
+
+        <h2>
+            Siap menikmati kopi?
+        </h2>
+
+        <p>
+            Pesan sekarang melalui WhatsApp.
+        </p>
+
+        <button id="contactBtn" class="btn">
+            Hubungi Kami
+        </button>
+
+    </section>
+
+
+    <footer>
+
+        &copy; 2026 Luthfi Coffee
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
