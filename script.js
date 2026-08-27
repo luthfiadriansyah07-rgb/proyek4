@@ -2,7 +2,7 @@
 // NOMOR WHATSAPP TOKO
 // ============================
 
-const nomorWhatsApp = "085135974307";
+const nomorWhatsApp = "6285135974307";
 
 
 // ============================
